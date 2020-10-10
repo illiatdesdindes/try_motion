@@ -1,1 +1,10 @@
-<div>Add TopTodo template here</div>
+<div>
+  <span><%= @total %></span>
+  <%= button_tag "Increment", data: { motion: "add" } %>
+
+  <ul>
+    <% @todos.each do |todo| %>
+      <li><%= todo %></li>
+    <% end %>
+  </ul>
+</div>

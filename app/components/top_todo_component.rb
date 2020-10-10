@@ -13,6 +13,11 @@ class TopTodoComponent < ViewComponent::Base
 
   def add
     @total += 1
+
+  end
+
+  def handle_increment(count)
+    @total = count
   end
 
   def handle_created(name)

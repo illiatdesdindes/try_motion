@@ -27,3 +27,18 @@
 <br>
 
 <%= link_to 'New Todo', new_todo_path %>
+
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= render TopTodoComponent.new(total: 5, total: 1) %>
+        </td>
+        <td>
+          <%= render TopTodoComponent.new(total: 5, total: 10) %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
