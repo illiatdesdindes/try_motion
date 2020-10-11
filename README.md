@@ -1,24 +1,13 @@
-# README
+# Testing the motion gem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+the [motion](https://github.com/unabridged/motion) gem allows you to build reactive, real-time frontend UI components in your Rails application using pure Ruby. It leverages the [ViewComponent](https://github.com/github/view_component) library augmenting it with realtime behavior through ActionCable.
 
-Things you may want to cover:
+## Install and run
+```
+git clone
+bundle install
+yarn install
+bin/rails s
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open 2 browser windows to http://localhost:3000 create/edit/remove some todos in one window. The TopTodos comporent on the index page should reflect those changes.
