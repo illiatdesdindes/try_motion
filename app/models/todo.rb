@@ -1,7 +1,7 @@
 class Todo < ApplicationRecord
-  after_commit :broadcast_created, on: :create
+  after_commit :broadcast_updated
 
-  def broadcast_created
-    ActionCable.server.broadcast("todos:created", name)
+  def broadcast_updated
+    ActionCable.server.broadcast("todos:updated", name)
   end
 end

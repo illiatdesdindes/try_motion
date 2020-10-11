@@ -1,7 +1,7 @@
 class TopTodoComponent < ViewComponent::Base
   include Motion::Component
 
-  stream_from "todos:created", :handle_created
+  stream_from "todos:updated", :handle_updated
 
   def initialize(count: 5, total: 1)
     @count = count
@@ -20,7 +20,7 @@ class TopTodoComponent < ViewComponent::Base
     @total = count
   end
 
-  def handle_created(name)
-    @todos = [name, *@todos.first(@count - 1)]
+  def handle_updated(name)
+    @todos = Todo.order(id: :desc).last(@count - 1).map(&:name)
   end
 end
